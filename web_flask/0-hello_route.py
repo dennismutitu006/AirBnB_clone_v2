@@ -4,9 +4,10 @@ from flask import Flask
 
 
 app = Flask(__name__)
-
-@app.route('/', strict_slashes=False)
+app.url_map.strict_slashes = False
+@app.route('/')
 def hello_hbnb():
+    """Print webpage content"""
     return 'Hello HBNB!'
 
 if '__name__' == '__main__':
